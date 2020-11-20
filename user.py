@@ -35,6 +35,12 @@ class Credentials:
         self.username = username
         self.pass_word = pass_word
         
+    def delete_credential(self):
+        """
+        gets to delete a saved credential
+        """
+        Credentials.User_Credentials_list.remove(self)
+        
    
         
 

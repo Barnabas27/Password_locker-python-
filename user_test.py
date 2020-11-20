@@ -45,10 +45,24 @@ class TestCredentials(unittest.TestCase):
         this is to check whether we can save multiple contacts
         """
         self.new_credential.save_credential()
-        test_credential = Credentials("facebook","@Prada","1234") #this is a new contact
+        test_credential = Credentials("facebook","@Prada","1234") #this is a new credential
         test_credential.save_credential()
         self.assertEqual(len(Credentials.User_Credentials_list),2)
     
+    def test_delete_credential(self):
+        
+        """
+        this is to test whether a credential can be deleted
+        """
+        self.new_credential.save_credential()
+        test_credential = Credentials("facebook","@Prada","1234") #the new credential created
+        test_credential.save_credential()
+        
+        self.new_credential.delete_credential() 
+        """
+        this will delete a credential
+        """
+        self.assertEqual(len(Credentials.User_Credentials_list),1)
         
 if __name__ =='__main__':
     unittest.main()
