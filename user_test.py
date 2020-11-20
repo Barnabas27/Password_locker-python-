@@ -64,5 +64,12 @@ class TestCredentials(unittest.TestCase):
         """
         self.assertEqual(len(Credentials.User_Credentials_list),1)
         
+    def test_display_all_credentials(self):
+        
+        """
+        shows a list of all saved user credentials
+        """
+        self.assertEqual(Credentials.display_credentials(),Credentials.User_Credentials_list)
+        
 if __name__ =='__main__':
     unittest.main()

@@ -41,6 +41,15 @@ class Credentials:
         """
         Credentials.User_Credentials_list.remove(self)
         
+        
+    @classmethod
+    def display_credentials(cls):
+        """
+        this returns the credential list
+        """
+        return cls.User_Credentials_list
+        
+        
    
         
 
