@@ -62,11 +62,11 @@ class Credentials:
         """
         save_credential method that saves credential objects into the user_credential_list
         """
-    def __init__(self,sm_account,username,pass_word):
+    def __init__(self,sm_account,username,password):
         
         self.sm_account = sm_account
         self.username = username
-        self.pass_word = pass_word
+        self.password = password
         
     def delete_credential(self):
         """

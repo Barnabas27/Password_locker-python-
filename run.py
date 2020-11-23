@@ -21,12 +21,21 @@ def delete_user(self):
     """
     this functions deletes user
     """
+def create_credential(sm_account,username,password):
+    '''
+    Function creates new credentials
+    '''
+    new_credential = Credentials(sm_account,username,password)
+    return new_credential
 
-def save_credential(self):
+
+def save_credential(credential):
     """
     function to save credentials
     """
     credential.save_credential()
+    
+   
 
 
 def del_credential(credential):
@@ -60,6 +69,7 @@ def main():
 
             print('Please confirm password:')
             password_confirmed = input()
+            
 
             while password_confirmed != password_created:
                 print('Your passwords do not match,please try again!')
@@ -98,10 +108,32 @@ def main():
                             print('Enter your password:')
 
                             Password = input()
+                            
+                            
                 
             else:
                 print(f'Welcome {account_created}')
-                        
+                
+                print (' Create your social media accounts:')  
+                print('Enter your social media account:') 
+                sm_account = input()
+                print('Enter the username you use here:')
+                username = input()
+                print('The password you use in this account:')
+                password = input()   
+                
+                save_credential(create_credential(sm_account,username,password))#creates and saves new credentials
+                print('\n')
+                print(f'Social media account{sm_account} with username {username} created.')
+                
+                
+                
+                
+                
+                
+                
+            
+                
             
                     
 
