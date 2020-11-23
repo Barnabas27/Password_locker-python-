@@ -125,6 +125,22 @@ def main():
                 save_credential(create_credential(sm_account,username,password))#creates and saves new credentials
                 print('\n')
                 print(f'Social media account{sm_account} with username {username} created.')
+                print('Do you want to display your credentials?(y/n')
+                answer = input()
+                if answer == "y":
+                    
+                    display_credential()
+                        
+                    print('Here are alll your credentials:')
+                    print('\n')
+                        
+                    for credential in display_credential():
+                        print(f"{sm_account} {username} {password}")
+                        
+                        print('\n')
+                else:
+                    print('You don\'t have a credential_list yet.')
+                
                 
                 
                 
