@@ -18,6 +18,13 @@ class User:
         self.username = username
         self.password = password
         
+        
+    def delete_user(self):
+        '''
+        delete_user method deletes a saved user from the user_list
+        '''
+        User.User_List.remove(self)
+        
     
 
 # class Credentials:

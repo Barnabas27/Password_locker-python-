@@ -14,6 +14,12 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.username,"Barbez")
         self.assertEqual(self.new_user.password,"123")
         
+    def tearDown(self):
+        
+        '''
+        this cleans up after each test case
+        '''
+        User.User_List = []
     def test_save_multiple_user(self):
         '''
         this test is to check whether one can save multiple user object to the
@@ -23,6 +29,18 @@ class TestUser(unittest.TestCase):
         test_user = User("barbez","12345")
         test_user.save_user()
         self.assertEqual(len(User.User_List),2)
+        
+        
+    def test_delete_user(self):
+        '''
+        this is to test whether we can delete user from User_List
+        '''
+        self.new_user.save_user()
+        test_user = User("barbez","12345")
+        test_user.save_user()
+        
+        self.new_user.delete_user()
+        self.assertEqual(len(User.User_List),1)
         
         
 # class TestCredentials(unittest.TestCase):
