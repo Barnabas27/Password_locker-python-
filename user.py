@@ -25,6 +25,16 @@ class User:
         '''
         User.User_List.remove(self)
         
+    @classmethod
+    def user_exist(cls,number):
+        '''
+        checks whether our user exists
+        '''
+        for user in cls.User_List:
+            if user.password == number:
+                return True
+            
+        return False        
     
 
 # class Credentials:
