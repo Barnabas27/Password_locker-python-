@@ -34,46 +34,53 @@ class User:
             if user.password == number:
                 return True
             
-        return False        
+        return False     
+    
+    @classmethod
+    def display_user(cls):
+        '''
+        this method returns users' list
+        '''
+        return cls.User_List   
     
 
-# class Credentials:
+class Credentials:
     
     
         
-#     """
-#     Class Credentials generates instances of what will be contained in the class
-#     """
+    """
+    Class Credentials generates instances of what will be contained in the class
+    """
         
-#     User_Credentials_list = []
+    User_Credentials_list = []
         
-#     def save_credential(self):
+    def save_credential(self):
         
             
-#         Credentials.User_Credentials_list.append(self)
+        Credentials.User_Credentials_list.append(self)
             
-#         """
-#         save_credential method that saves credential objects into the user_credential_list
-#         """
-#     def __init__(self,sm_account,username,pass_word):
+        """
+        save_credential method that saves credential objects into the user_credential_list
+        """
+    def __init__(self,sm_account,username,pass_word):
         
-#         self.sm_account = sm_account
-#         self.username = username
-#         self.pass_word = pass_word
+        self.sm_account = sm_account
+        self.username = username
+        self.pass_word = pass_word
         
-#     def delete_credential(self):
-#         """
-#         gets to delete a saved credential
-#         """
-#         Credentials.User_Credentials_list.remove(self)
+    def delete_credential(self):
+        """
+        gets to delete a saved credential
+        """
+        Credentials.User_Credentials_list.remove(self)
         
         
-#     @classmethod
-#     def display_credentials(cls):
-#         """
-#         this returns the credential list
-#         """
-#         return cls.User_Credentials_list
+    @classmethod
+    def display_credentials(cls):
+        """
+        this returns the credential list
+        """
+        return cls.User_Credentials_list
         
         
    
