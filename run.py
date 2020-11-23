@@ -51,6 +51,13 @@ def display_credential():
     """
     return Credentials.display_credentials()
 
+def generate_password(self):
+    '''
+    this auto_generates password
+    '''
+    auto_password = Credentials.generate_password(self)
+    return auto_password
+
 
 def main():
     while True:
@@ -119,83 +126,50 @@ def main():
                 sm_account = input()
                 print('Enter the username you use here:')
                 username = input()
-                print('The password you use in this account:')
-                password = input()   
-                
-                save_credential(create_credential(sm_account,username,password))#creates and saves new credentials
-                print('\n')
-                print(f'Social media account{sm_account} with username {username} created.')
-                print('Do you want to display your credentials?(y/n')
-                answer = input()
-                if answer == "y":
+                while True:
+                    print('Do you have a password you use in this account:(y/n)')
+                    jibu = input().lower().strip()
+                   
+             
+                    if jibu == 'y':
+                        print('Enter your password:')
+                        password = input()
+                        break
                     
-                    display_credential()
+                    elif jibu== 'n':
+                        print('I am generating a password for you:')          
                         
-                    print('Here are alll your credentials:')
+                        password = generate_password(password)
+                        print('password')
+                        break
+                    save_credential(create_credential(sm_account,username,password))#creates and saves new credentials
                     print('\n')
+                    print(f'Social media account{sm_account} with username {username} created.')
+                    print('Do you want to display your credentials?(y/n')
+                    answer = input()
+                    
+                    if answer == "y":
                         
-                    for credential in display_credential():
-                        print(f"{sm_account} {username} {password}")
+                    
+                        display_credential()
                         
+                        print('Here are all your credentials:')
                         print('\n')
-                else:
-                    print('You don\'t have a credential_list yet.')
-                
-                
-                
-                
-                
-                
-                
-                
-            
-                
-            
-                    
-
-                    
-                
-            # else:
-            #     print(f"You have successfully created {account_created}")
-        #     print('Now log in:')
-
-        #     print('Username')
-        #     Username = input()
-
-        #     print('Enter password:')
-        #     Password = input()
-
-        #     while Username != account_created or Password != password_created:
-        #         print('Check your username or password and try again.')
-        #         print('Username:')
-
-        #         Username = input()
-        #         print('Enter your password:')
-
-        #         Password = input()
-        #     print(f'welcome {Username}')
-            
-        # elif abbreviation == 'lg':
-        #     print('Enter your username:')
-        #     regular_user = input()
-
-        #     print('Enter your Password:')
-        #     previous_user = input()
-            
-         
-        #     while regular_user != Username or previous_user != Password:
-        #         print('You are a scam: Would you want to create an account?')
-        #         print('Username:')
-        #         regular_user = input()
-        #         print('Enter your password:')
-        #         previous_user = input()            
-        
-        #     print(f"Welcome back {regular_user}!I have missed you")
-        #     # print("Login user")
-
-        # elif abbreviation == 'x':
-        #     print('Take your time you are home')
-        #     break
+                        
+                        for credential in display_credential():
+                            
+                            print(f"{sm_account} {username} {password}")
+                            
+                        
+                            print('\n')
+                            
+                            
+                        else:
+                            
+                            
+                            print('You don\'t have a credential_list yet.')
+                            print('\n')
+          
 
 
 if __name__ == '__main__':
